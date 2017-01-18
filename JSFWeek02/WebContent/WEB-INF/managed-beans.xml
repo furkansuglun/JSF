@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+        http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+
+	<managed-bean>
+
+		<managed-bean-name>helloInjectBeanXML</managed-bean-name>
+		<managed-bean-class>_08.xml.config.HelloInjectBeanXML</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		
+		<managed-property>
+			<property-name>name</property-name>
+			<value>Any name</value>
+		</managed-property>
+		
+		<managed-property>
+			<property-name>password</property-name>
+			<value>Any pass</value>
+		</managed-property>
+		
+		
+		<managed-property>
+			<property-name>messageBeanXML</property-name>
+			<value>#{messageBeanXMLName}</value>
+		</managed-property>
+
+	</managed-bean>
+	
+	
+	<managed-bean>
+
+		<managed-bean-name>messageBeanXMLName</managed-bean-name>
+		<managed-bean-class>_08.xml.config.MessageBeanXML</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		
+		
+
+	</managed-bean>
+
+</faces-config>   

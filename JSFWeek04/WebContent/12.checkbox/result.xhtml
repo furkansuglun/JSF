@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+	<title>checkbox</title>
+</h:head>
+
+<h:body>
+	<h1>select boolean check</h1>
+	<p>#{checkBean.enabled}</p>
+	
+	
+	<h1>select many checkbox f:selectitem</h1>
+	<c:forEach var="elements" items="#{checkBean.array1}" >#{elements}</c:forEach>
+	
+	<h1>select many checkbox f:selectitem</h1>
+	<c:forEach var="elements2" items="#{checkBean.array2}">#{elements2}</c:forEach>
+	
+	<h1>select many checkbox f:selectitem List</h1>
+	
+	<c:forEach var="elements3" items="#{checkBean.list1}">#{elements3}</c:forEach>
+	
+</h:body>	
+</html>

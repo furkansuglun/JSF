@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:body>
+	
+	
+	<h:form>
+		<p>
+			<h:graphicImage height="100px" width="100px" value="../resources/image/a.png"></h:graphicImage>
+			<!--  .. yukarı çık demek bulundugu klasöreden yukarı yani web contente çıkar -->
+		</p>
+		<p>
+			<h:graphicImage height="100px" width="100px" value="/resources/image/c.png"></h:graphicImage>
+		</p>
+		<p>
+		<!-- jsf default olarak web-content altındaki resources klasörne bakar library ile -->
+			<h:graphicImage library="images" name="e.png" height="100px" width="100px"></h:graphicImage>
+		</p>
+		
+		
+	</h:form>
+	
+<style>
+	.blueClass{
+		color:blue;
+	}
+</style>
+	
+<script>
+	function callMyFunction() {
+		alert("test method");
+	}
+</script>	
+</h:body>	
+</html>

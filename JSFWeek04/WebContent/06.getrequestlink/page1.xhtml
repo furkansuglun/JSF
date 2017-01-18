@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+	<h3>page1!</h3>
+	
+	<p>
+		name: #{param.name} <!-- implicit object "param" -->
+	</p>
+	
+	<p>
+		surname: #{param.surname} <!-- implicit object "param" -->
+	</p>
+	
+	
+	<f:metadata>
+		<f:viewParam name="name" value="#{gBean.property1}"/>
+		<f:viewParam name="surname" value="#{gBean.property2}"/>
+	</f:metadata>
+	
+	<h1>after f:metadata</h1>
+	<p>
+		property1 : #{gBean.property1}
+	</p>
+	<p>
+		property2 : #{gBean.property2}
+	</p>
+	
+</html>

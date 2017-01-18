@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>rediobutton</title>
+</h:head>
+
+<h:body>
+	<h:form prependId="false" id="myFormId">
+		
+		<table>
+			<tr>
+				<td>
+					Name
+				</td>
+				<td>
+					<h:inputText value="#{message.name}" id="name" required="true" label="name" requiredMessage="It is required!"></h:inputText>*
+				</td>
+				<td>
+					<h:message for="name" errorStyle="color:red"></h:message>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Surname
+				</td>
+				<td>
+					<h:inputText value="#{message.surname}" id="surname" required="true" label="surname"></h:inputText>
+				</td>
+				<td>
+					<h:message for="surname"></h:message>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Age
+				</td>
+				<td>
+					<h:inputText value="#{message.age}" id="age" required="true" label="age"></h:inputText>
+				</td>
+				<td>
+					<h:message for="age"></h:message>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Number
+				</td>
+				<td>
+					<h:inputText id="number" required="true" label="number" validatorMessage="Number must be in 5-10 range.">
+						<f:validateLength minimum="5" maximum="10"></f:validateLength>
+					</h:inputText>
+				</td>
+				<td>
+					<h:message for="number"></h:message>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<h:commandButton value="Send" action="result"></h:commandButton>
+				</td>
+			</tr>
+			
+		</table>
+		
+	</h:form>
+	
+	
+
+</h:body>	
+</html>

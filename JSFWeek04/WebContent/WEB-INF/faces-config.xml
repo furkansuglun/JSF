@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+        http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+
+	
+	<navigation-rule>
+		<from-view-id>
+			<!-- nerden geliyoruz -->
+			/02.dynamicnavigation/login.xhtml
+		</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/02.dynamicnavigation/admin.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>fail</from-outcome>
+			<to-view-id>/02.dynamicnavigation/fail.xhtml</to-view-id>
+		</navigation-case>
+		
+	</navigation-rule>
+	
+	
+	
+	
+	<navigation-rule>
+		<from-view-id>/03.conditionalnavigation/login.xhml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>testNavigationPath</from-outcome>
+			<if>#{cBean.property1=='page1'}</if>
+			<to-view-id>/03.conditionalnavigation/page1.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>testNavigationPath</from-outcome>
+			<if>#{cBean.property1=='page2'}</if>
+			<to-view-id>/03.conditionalnavigation/page2.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>testNavigationPath</from-outcome>
+			<if>#{cBean.property1=='page3' and cBean.property2==100}</if>
+			<to-view-id>/03.conditionalnavigation/page3.xhtml</to-view-id>
+		</navigation-case>
+		
+		
+	</navigation-rule>
+	
+	
+	<navigation-rule>
+		<from-view-id>/04.fromaction/login.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-action>#{fABean.navigateMethod1}</from-action>
+			<from-outcome>navigate</from-outcome>
+			<to-view-id>/04.fromaction/page1.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{fABean.navigateMethod2}</from-action>
+			<from-outcome>navigate</from-outcome>
+			<to-view-id>/04.fromaction/page2.xhtml</to-view-id>
+		</navigation-case>
+	
+	</navigation-rule>
+	
+	
+	
+	<navigation-rule>
+		<from-view-id>/05.redirectnavigation/login.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>redirectOutcome</from-outcome>
+			<to-view-id>/05.redirectnavigation/page1.xhtml</to-view-id>
+			<redirect/> 
+		</navigation-case>
+	</navigation-rule>
+	
+	
+</faces-config>   

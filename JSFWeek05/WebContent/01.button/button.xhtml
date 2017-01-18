@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>scripImport</title>
+</h:head>
+
+<h:body>
+	<h:form prependId="false" id="myFormId">
+		<p>
+			<h:commandButton value="page1" action="page1"></h:commandButton> <!-- pos tile gider url sabit kalır -->
+		</p>
+		<p>
+			<h:commandButton value="page1" action="#{buttonBean.navigateToPage1}"></h:commandButton>
+		</p>
+		<p>
+			<h:commandButton value="page2" action="#{buttonBean.navigateToPage2}"></h:commandButton>
+		</p>
+		<p>
+			<h:commandButton value="page3" action="#{buttonBean.navigateToPage3}"></h:commandButton>
+		</p>
+		<p>
+			<h:button value="h:button page1" outcome="page1" ></h:button> <!-- get ile gider url degişir -->
+		</p>
+		
+		<p>
+			<h:commandButton value="commanbutton onClick" onclick="alert('command button')"></h:commandButton>
+		</p>
+		
+		<p>
+			<h:commandButton value="submit my form" onclick="submitMyForm()"></h:commandButton>
+		</p>
+		
+		<p>
+			<h:commandButton  image="a.png" action="page1"></h:commandButton>
+		</p>
+		
+	</h:form>
+	
+<script>
+	function submitMyForm() {
+		
+		alert("your form will submitting");
+		var myForm = document.getElementById("myFormId");
+		myForm.action = "page3.xhtml";
+		myForm.submit();
+	}
+</script>	
+	
+</h:body>	
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+	<title>scripImport</title>
+</h:head>
+
+<h:body>
+	
+	<h1>language: #{select.language}</h1>
+	<h1>Years</h1>
+	<c:forEach var="element" items="#{select.years}">
+		#{element}
+	</c:forEach>
+	<h1>birdYear: #{select.birdYear}</h1>
+	<h1>Year2</h1>
+	<c:forEach var="element2" items="#{select.year2}">
+		#{element2}
+	</c:forEach>
+</h:body>	
+</html>

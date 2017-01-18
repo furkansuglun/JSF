@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:body>
+	<h3>geT req link!</h3>
+
+	<p>
+		<h:link value="click me" outcome="page1?name=Furkan&amp;surname=Suglun"/>
+		<!-- & işareti kullanlırken amp; kullanılmazsa hata verir -->
+	</p>
+	
+	<h:link value="click me!! f:param" outcome="page1">
+		<f:param name="name" value="Furkan"/>
+		<f:param name="surname" value="Suglun"/>
+	</h:link>
+	
+</h:body>	
+</html>

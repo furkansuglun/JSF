@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>scripImport</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p>
+			<h:selectBooleanCheckbox value="#{checkBean.enabled}"></h:selectBooleanCheckbox>
+		</p>
+		<p>
+			<h:selectManyCheckbox value="#{checkBean.array1}">
+				<f:selectItem itemValue="itemvalue1" itemLabel="itemlabel1"/>
+				<f:selectItem itemValue="itemvalue2" itemLabel="itemlabel2"/>
+				<f:selectItem itemValue="itemvalue3" itemLabel="itemlabel3"/>
+				<f:selectItem itemValue="itemvalue4" itemLabel="itemlabel4"/>
+			</h:selectManyCheckbox>
+		</p>
+		
+		
+		<p>
+			<h:selectManyCheckbox value="#{checkBean.array2}">
+				<f:selectItems value="#{checkBean.preparedData}"></f:selectItems>
+			</h:selectManyCheckbox>
+		</p>
+		
+		<p>
+			<h:selectManyCheckbox value="#{checkBean.list1}"> 
+				<f:selectItems value="#{checkBean.mapPreparedData}"></f:selectItems>
+			</h:selectManyCheckbox>
+		</p>
+		
+		
+		<p>
+			<h:commandButton value="click me" action="result.xhtml"/>
+		</p>
+		
+	</h:form>
+	
+	
+	
+</h:body>	
+</html>

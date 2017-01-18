@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">	<!-- xmlns:f for ajax -->
+
+	<h:head>
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>@ManagedProperty DI Example</title>
+	
+	</h:head>
+
+	<h:form prependId="false">
+		<h3>Please enter your name and password</h3>
+		<table>
+		
+			<tr>
+				<td>Name :</td>
+				<td><h:inputText value="#{injectMeBean.name}" id="nameId" /></td>
+			</tr>
+			
+		</table>
+		
+		<p> 
+		<h:commandButton value="Click Me!" >
+			<f:ajax execute="nameId" render="output" />
+			
+			<!-- render attribute : ajax istediğinde parçalı olarak render edeceğimiz alanların id bilgisi 
+				execute : ajax isteğinde hangi alanlari gönderiyoruz.
+			-->
+		</h:commandButton>
+		</p>
+	
+		
+		<h2>
+		
+		<h:outputText id="output" value="#{injectMeBean.welcomeMessage}" ></h:outputText>
+			
+		</h2>
+	
+	
+	</h:form>
+ 
+
+</html>

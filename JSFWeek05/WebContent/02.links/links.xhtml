@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>scripImport</title>
+</h:head>
+
+<h:body>
+	<h:form prependId="false" id="myFormId">
+		<p>
+			<h:commandLink value="command link" action="page1.xhtml" ></h:commandLink> <!-- linkler  formu submit etmez h:commandlink submit eder -->
+		</p>
+			
+		<p>
+			<h:commandLink value="page1" action="#{link.navigateToPage1}"></h:commandLink>
+		</p>
+		
+		<p>
+			<h:commandLink value="page2" action="#{link.navigateToPage2}"></h:commandLink>
+		</p>
+		
+		<p>
+			<h:commandLink value="page3" action="#{link.navigateToPage3}"></h:commandLink>
+		</p>
+		
+		<!--  commandlin ler h:form içinde olmalıdır . http:POST istegine neden olur-->
+		
+	</h:form>
+	
+	<!-- h:link ve h:button formu submit etmez dışarda olabilir 
+	ve http:GET istegine neden olur. -->
+	<p>
+			<h:link value="h:link" outcome="page1" ></h:link>
+		</p>
+		
+		<p>getMyPageOutcome
+			<h:link value="h:link clickme" outcome="#{link.myPageOutcome}"></h:link>
+		</p>
+		
+		
+		<p>
+			<h:link value="page1 with param" outcome="page1">
+				<f:param name="username" value="admin"></f:param>
+			</h:link>
+		</p>
+		
+		<p>
+			<h:link outcome="page1" >
+				<h:graphicImage value="a.png"></h:graphicImage>
+			</h:link>
+		</p>
+		
+		<p>
+			<h:outputLink value="page1.xhtml" >click me outputlink</h:outputLink> 
+			<!--  value içinde gidilecek sayfa // uzatınsını yazmamız laızm -->
+			<!--  eski bir omponent -->
+		</p>
+		
+		<p>
+			<h:outputLink value="page1.xhtml" >
+				<h:graphicImage value="bg.jpg"></h:graphicImage>
+			</h:outputLink> 
+			
+		</p>
+	
+<script>
+	function submitMyForm() {
+		
+		alert("your form will submitting");
+		var myForm = document.getElementById("myFormId");
+		myForm.action = "page3.xhtml";
+		myForm.submit();
+	}
+</script>	
+	
+</h:body>	
+</html>

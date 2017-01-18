@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>datatable</title>
+</h:head>
+
+<h:body>
+	<h:form prependId="false" id="myFormId">
+			
+		<h:dataTable value="#{datatable.personList}" var="person">
+			<h:column>#{person.name}</h:column>
+			<h:column>#{person.surname}</h:column>
+			<h:column>#{person.age}</h:column>
+		</h:dataTable>
+		
+		
+		<br/><br/>
+		
+		
+		<h:dataTable value="#{datatable.personList}" var="person" 
+					 styleClass="person-table" captionStyle="font-size:15px"
+				   	 rowClasses="person-table-oddRow , person-table-evenRow" headerClass="person-table-header">
+							
+			<f:facet name="caption">Person List</f:facet>
+			
+			<h:column>
+				<f:facet name="header">Name</f:facet>
+				#{person.name}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Surname</f:facet>
+				#{person.surname}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Age</f:facet>
+				#{person.age}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Delete</f:facet>
+				<h:commandLink value="Delete" action="#{datatable.deletePerson(person)}"></h:commandLink>
+			</h:column>
+		</h:dataTable>
+	
+	
+	</h:form>
+
+<style>
+.person-table{
+	border-collapse: collapse;
+}
+
+.person-table-header{
+	text-align: center;
+	background: #5d9de4;
+	padding: 20px;
+	color: white;
+}
+
+.person-table-oddRow{
+	text-align: center;
+	background: #eaeaea;
+	border-top: 1px solid #888888;
+}
+
+.person-table-evenRow{
+	text-align: center;
+	background: #F9F9F9;
+	border-top: 1px solid #BBBBBB;
+}
+</style>
+
+	
+</h:body>	
+</html>

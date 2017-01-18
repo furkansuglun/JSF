@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>rediobutton</title>
+</h:head>
+
+<h:body>
+	<h:form prependId="false" id="myFormId">
+		
+		<h:selectOneMenu value="#{select.language}">
+			<f:selectItem itemLabel="EN" itemValue="EN"/>
+			<f:selectItem itemLabel="TR" itemValue="TR"/>
+		</h:selectOneMenu>
+		
+		<br/>
+			
+		<h:selectManyMenu value="#{select.years}">
+			<f:selectItems  value="#{select.preparedYears}" />
+		</h:selectManyMenu>
+		
+		<br/>
+		
+		<h:selectOneListbox value="#{select.birdYear}">
+			<f:selectItems  value="#{select.preparedYears}" />
+		</h:selectOneListbox>
+			
+		<br/>
+			
+		<h:selectManyListbox value="#{select.year2}">
+			<f:selectItems  value="#{select.preparedYears}" />
+		</h:selectManyListbox>	
+		
+		<br/>
+		
+		<h:commandButton value="Send" action="result"></h:commandButton>
+		
+	</h:form>
+	
+	
+
+</h:body>	
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>rediobutton</title>
+</h:head>
+
+<h:body>
+	<h:form prependId="false" id="myFormId">
+		
+		<p>
+			<h:selectOneRadio value="#{radio.gender}">
+				<f:selectItem itemValue="Man" itemLabel="Man"/>
+				<f:selectItem itemValue="woman" itemLabel="Woman"/>
+			</h:selectOneRadio>
+		
+		</p>
+		
+		<p>
+			<h:selectOneRadio value="#{radio.maritalStatus}">
+				<f:selectItems value="#{radio.preparedData}"></f:selectItems>
+			</h:selectOneRadio>
+		</p>
+		
+		<p>
+			<h:selectOneRadio value="#{radio.job}">
+				<f:selectItems value="#{radio.preparedJob}"></f:selectItems>
+			</h:selectOneRadio>
+		</p>
+		
+		<h:commandButton value="See Result" action="#{radio.navigateToPage}"></h:commandButton>
+		
+	</h:form>
+	
+	
+	
+	
+	
+	
+<script>
+	function submitMyForm() {
+		
+		alert("your form will submitting");
+		var myForm = document.getElementById("myFormId");
+		myForm.action = "page3.xhtml";
+		myForm.submit();
+	}
+</script>	
+	
+</h:body>	
+</html>
